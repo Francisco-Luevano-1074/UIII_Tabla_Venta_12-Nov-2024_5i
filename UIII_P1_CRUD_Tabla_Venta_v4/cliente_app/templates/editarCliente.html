@@ -4,48 +4,50 @@
 <div class="row">
     <div class="col-md-4 offset-md-4">
         <h2>Editar Cliente</h2>
-        <div class="card">
+        <div class="card"> <!--LA TARJETA-->
             <div class="card-body">
-                <form action="/editarCliente/" method="POST">
-                    {% csrf_token %}
-                    <input type="hidden" name="txtcodigo" value="{{ misclientes.codigo }}">
-                    
+                <form action='registrarCliente/' method='POST'> {% csrf_token %}<!--NO HAY ACCION-->
                     <div class='form-group'>
-                        <input type="text" id="txtnombre" name="txtnombre" class="form-control" 
-                        value="{{ misclientes.nombre }}" placeholder="Nombre del Cliente" required>
+                    <input type="text" id="txtcodigo" name="txtcodigo" class="form-control"
+                    placeholder="Codigo Cliente" minlenght="1" maxlenght="6" requiered>
                     </div>
-
+    
                     <div class='form-group py-3'>
-                        <input type="text" id="txtapellido" name="txtapellido" class="form-control"
-                        value="{{ misclientes.apellido }}" placeholder="Apellido del cliente" required>
+                    <input type="text" id="txtnombre" name="txtnombre" class="form-control" 
+                    placeholder="Nombre" minlenght="1" maxlenght="100" requiered>
                     </div>
-
+                        
                     <div class='form-group py-3'>
-                        <input type="text" id="txtno_telefono" name="txtno_telefono" class="form-control" 
-                        value="{{ misclientes.no_telefono }}" placeholder="Número de teléfono del cliente" required>
+                    <input type="text" id="txtapellido" name="txtapellido" class="form-control" 
+                    placeholder="Apellido" minlenght="1" maxlenght="100" requiered>
                     </div>
-
+    
                     <div class='form-group py-3'>
-                        <input type="text" id="txtemail" name="txtemail" class="form-control" 
-                        value="{{ misclientes.email }}" placeholder="Email" required>
+                    <input type="text" id="txtno_telefono" name="txtno_telefono" class="form-control" 
+                    placeholder="Número de teléfono" minlenght="1" maxlenght="100" requiered>
                     </div>
-
+    
                     <div class='form-group py-3'>
-                        <input type="text" id="txtnom_cliente" name="txtnom_cliente" class="form-control" 
-                        value="{{ misventas.nom_cliente }}" placeholder="Nombre del Cliente" required>
+                    <input type="text" id="txtemail" name="txtemail" class="form-control" 
+                    placeholder="E-mail" minlenght="1" maxlenght="100" requiered>
                     </div>
-
+    
                     <div class='form-group py-3'>
-                        <input type="text" id="txttotal" name="txttotal" class="form-control" 
-                        value="{{ misventas.total }}" placeholder="Total" required>
+                    <input type="text" id="txtorden" name="txtorden" class="form-control" 
+                    placeholder="Orden" minlenght="1" maxlenght="100" requiered>
                     </div>
-
+    
+                    <div class='form-group py-3'>
+                    <input type="text" id="txtmesa" name="txtmesa" class="form-control" 
+                    placeholder="Mesa" minlenght="1" maxlenght="100" requiered>
+                    </div>
+                    
                     <div class='form-group py-2'>
-                        <button type="submit" class="btn btn-primary">Guardar Venta</button>
+                    <button type="submit" class="btn btn-primary">Guardar Cliente</button>
                     </div>
-                </form>
+                    </form>
             </div>
-        </div>
+        </div> <!--LA TARJETA-->
     </div>
 </div>
 {% endblock %}

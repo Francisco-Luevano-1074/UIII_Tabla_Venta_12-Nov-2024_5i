@@ -1,4 +1,4 @@
-{% extends 'base2.html'%}
+{% extends 'base.html'%}
 
 {% block cuerpo %}
 <div class = "row"> <!--LA FILA-->
@@ -7,40 +7,40 @@
     <h1>Agregar Venta</h1>
     <div class="card"> <!--LA TARJETA-->
         <div class="card-body">
-            <form action='registrarVenta/' method='POST'> {% csrf_token %}<!--NO HAY ACCION-->
+            <form action='registrarCliente/' method='POST'> {% csrf_token %}<!--NO HAY ACCION-->
                 <div class='form-group'>
                 <input type="text" id="txtcodigo" name="txtcodigo" class="form-control"
-                placeholder="Codigo Venta" minlenght="1" maxlenght="6" requiered>
+                placeholder="Codigo Cliente" minlenght="1" maxlenght="6" requiered>
                 </div>
 
                 <div class='form-group py-3'>
-                <input type="text" id="txtempaque" name="txtempaque" class="form-control" 
-                placeholder="Tipo de empaque" minlenght="1" maxlenght="100" requiered>
+                <input type="text" id="txtnombre" name="txtnombre" class="form-control" 
+                placeholder="Nombre" minlenght="1" maxlenght="100" requiered>
                 </div>
                     
                 <div class='form-group py-3'>
-                <input type="text" id="txtcontenido" name="txtcontenido" class="form-control" 
-                placeholder="Contenido" minlenght="1" maxlenght="100" requiered>
+                <input type="text" id="txtapellido" name="txtapellido" class="form-control" 
+                placeholder="Apellido" minlenght="1" maxlenght="100" requiered>
                 </div>
 
                 <div class='form-group py-3'>
-                <input type="text" id="txtdir_cliente" name="txtdir_cliente" class="form-control" 
-                placeholder="Dirección Cliente" minlenght="1" maxlenght="100" requiered>
+                <input type="text" id="txtno_telefono" name="txtno_telefono" class="form-control" 
+                placeholder="Número de teléfono" minlenght="1" maxlenght="100" requiered>
                 </div>
 
                 <div class='form-group py-3'>
-                <input type="text" id="txttel_cliente" name="txttel_cliente" class="form-control" 
-                placeholder="Teléfono del Cliente" minlenght="1" maxlenght="100" requiered>
+                <input type="text" id="txtemail" name="txtemail" class="form-control" 
+                placeholder="E-mail" minlenght="1" maxlenght="100" requiered>
                 </div>
 
                 <div class='form-group py-3'>
-                <input type="text" id="txtnom_cliente" name="txtnom_cliente" class="form-control" 
-                placeholder="Nombre del Cliente" minlenght="1" maxlenght="100" requiered>
+                <input type="text" id="txtorden" name="txtorden" class="form-control" 
+                placeholder="Orden" minlenght="1" maxlenght="100" requiered>
                 </div>
 
                 <div class='form-group py-3'>
-                <input type="text" id="txttotal" name="txttotal" class="form-control" 
-                placeholder="Total" minlenght="1" maxlenght="100" requiered>
+                <input type="text" id="txtmesa" name="txtmesa" class="form-control" 
+                placeholder="Mesa" minlenght="1" maxlenght="100" requiered>
                 </div>
                 
                 <div class='form-group py-2'>
@@ -62,28 +62,28 @@
         <tr>
             <th scope="col">#</th>
             <th scope="col">Codigo</th>
-            <th scope="col">Empaque</th>
-            <th scope="col">Dirección del Cliente</th>
-            <th scope="col">Teléfono del Cliente</th>
-            <th scope="col">Nombre del Cliente</th>
-            <th scope="col">Total</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">Número de teléfono</th>
+            <th scope="col">Orden</th>
+            <th scope="col">Mesa</th>
 
             <th>Opciones</th>
         </tr>
         </thead>
         <tbody>
-            {% for v in misventas %}
+            {% for v in misclientes %}
             <tr>
                 <td> {{forloop.counter}} </td>
                 <td> {{v.codigo}} </td>
-                <td> {{v.empaque}} </td>
-                <td> {{v.dir_cliente}} </td>
-                <td> {{v.tel_cliente}} </td>
-                <td> {{v.nom_cliente}} </td>
-                <td> {{v.total}} </td>
-
-                <td> <a href="seleccionarVenta/{{v.codigo}}" class="btn btn-info">Editar</a> </td><!--FALTA CÓDIGO-->
-                <td> <a href="borrarVenta/{{v.codigo}}" class="btn btn-danger">Borrar</a> </td><!--FALTA CÓDIGO-->
+                <td> {{v.nombre}} </td>
+                <td> {{v.apellido}} </td>
+                <td> {{v.no_telefono}} </td>
+                <td> {{v.email}} </td>
+                <td> {{v.orden}} </td>
+                <td> {{v.mesa}} </td>
+                <td> <a href="seleccionarCliente/{{v.codigo}}" class="btn btn-info">Editar</a> </td><!--FALTA CÓDIGO-->
+                <td> <a href="borrarCliente/{{v.codigo}}" class="btn btn-danger">Borrar</a> </td><!--FALTA CÓDIGO-->
             </tr>
             {% endfor %}
         </tbody>

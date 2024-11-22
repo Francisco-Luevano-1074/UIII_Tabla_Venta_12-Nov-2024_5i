@@ -3,7 +3,7 @@ from .models import Cliente
 
 # Create your views here.
 
-def Inicio_vista(request):
+def Inicio_oido(request):
     losclientes=Cliente.objects.all()
     return render(request, 'gestionarCliente.html', {'misclientes' : losclientes})
 
@@ -16,7 +16,7 @@ def RegistrarCliente(request):
     orden=request.POST['txtorden']
     mesa=request.POST['txtmesa']
 
-    guardarclientes=Cliente.objects.create(codigo=codigo, nombre=nombre, apellido=apellido, no_telefono=no_telefono,email=email,orden=orden,total=mesa)
+    guardarclientes=Cliente.objects.create(codigo=codigo, nombre=nombre, apellido=apellido, no_telefono=no_telefono,email=email,orden=orden,mesa=mesa)
     return redirect ("/")
 
 

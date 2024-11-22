@@ -21,5 +21,4 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('', include('venta_app.urls')),
     path('', include('cliente_app.urls')),
-
 ]
